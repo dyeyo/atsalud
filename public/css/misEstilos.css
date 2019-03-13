@@ -1,0 +1,24 @@
+.topbar{
+    background: #c1c1c1 !important;
+}
+.left-sidebar{
+    background: #c1c1c1 !important;
+    -webkit-box-shadow: 7px -1px 5px -4px rgba(0,0,0,0.75)!important;
+    -moz-box-shadow: 7px -1px 5px -4px rgba(0,0,0,0.75)!important;
+    box-shadow: 7px -1px 5px -4px rgba(0,0,0,0.75)!important;
+}
+.listaNav{
+    color: #fff !important;
+    font-weight: bold !important;
+}
+.user-pro{
+    background: #009bdd !important;
+    color: #fff !important; 
+}
+#btnLogout{
+    border: none;
+    cursor: pointer;
+    font-weight: bold !important;
+    color: #fff;
+    background-color: #009bdd;
+}
