@@ -13,8 +13,8 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/waves.js') }}" defer></script>
     <script src="{{ asset('js/sidebarmenu.js') }}" defer></script>
-    <script src="{{ asset('js/custom.min.js') }}" defer></script>
     <script src="{{ asset('js/dashboard1.js') }}" defer></script>
+    <script src="{{ asset('js/custom.min.js') }}" defer></script>
     <script src="{{ asset('recursos/node_modules/jquery/jquery-3.2.1.min.js') }}" defer></script>
     <script src="{{ asset('recursos/node_modules/popper/popper.min.js') }}" defer></script>
     <script src="{{ asset('recursos/node_modules/bootstrap/dist/js/bootstrap.min.js') }}" defer></script>
@@ -251,8 +251,8 @@
                         </li>
                         <li class="nav-item dropdown u-pro">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="{{asset('recursos/images/users/1.jpg')}}" alt="user" class=""> 
-                            </a>        
+                                <img src="{{asset('recursos/images/users/1.jpg')}}" alt="user" class="">
+                            </a>
                         </li>
                      </ul>
                 </div>

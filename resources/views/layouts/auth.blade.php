@@ -35,8 +35,11 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/pages/dashboard1.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/pages/login-register-lock.css') }}" rel="stylesheet">
     <link href="{{ asset('recursos/node_modules/toast-master/css/jquery.toast.css') }}" rel="stylesheet">
     <link href="{{ asset('recursos/node_modules/morrisjs/morris.css') }}" rel="stylesheet"
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 </head>
 <body class="skin-blue card-no-border">
     <div class="preloader">
