@@ -17,8 +17,8 @@ class CreateMunicipalitiesTable extends Migration
             $table->increments('id');
 
             $table->string('name');
-            $table->integer('department_id');
-            $table->foreign('department_id')->references('id')->on('departments');
+            $table->integer('departament_id');
+            $table->foreign('departament_id')->references('id')->on('departament_id');
 
             $table->timestamps();
         });
