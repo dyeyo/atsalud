@@ -13,8 +13,8 @@ class CreateAfiliatesInformationSocialSecurityTable extends Migration
             $table->increments('id');
             $table->integer('afiliate_information_id')->unsigned();
             $table->integer('social_security_id')->unsigned();
-            $table->foreign('afiliate_information_id')->references('id')->on('afiliates_information');
-            $table->foreign('social_security_id')->references('id')->on('social_security');
+            $table->foreign('afiliate_information_id', 'ai_id_foreign')->references('id')->on('afiliates_information');
+            $table->foreign('social_security_id', 'sc_id_foreign')->references('id')->on('social_security');
             $table->timestamps();
         });
     }
