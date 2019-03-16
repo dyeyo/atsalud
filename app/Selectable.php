@@ -6,9 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Selectable extends Model
 {
-   protected $fillable=['content','type', 'affiliation_id'];
+    protected $table = 'selectables';
+    protected $fillable = ['content','type','affiliation_id'];
+    public $timestamps = true;
 
-    public function affiliation(){
-        return $this->belongsToMany('\App\Affiliations');
+    public function affiliation()
+    {
+        return $this->belongsTo(Affiliation::class);
     }
+
 }

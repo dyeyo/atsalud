@@ -6,25 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ips extends Model
 {
-    protected $fillable=['business_name','nit','address','phone','email','municipality_id'];
+    protected $table = 'ips';
+    protected $fillable = ['business_name','tradename','nit','address','phone','email','municipality_id'];
+    public $timestamps = true;
 
-    public function municipalitie()
+    public function afiliatesInformation()
     {
-        return $this->belongsTo('App\Municipalitie');
+        return $this->hasMany(AfiliateInformation::class);
     }
-
-    public function family_nucleus()
+    public function municipality()
     {
-        return $this->hasMany('App\Family_nucleus');
-    }
-
-    public function afiliates_information()
-    {
-        return $this->hasMany('App\Afiliates_information');
-    }
-
-    public function reference_patient()
-    {
-        return $this->hasMany('App\Reference_patients');
+        return $this->belongsTo(Municipality::class);
     }
 }

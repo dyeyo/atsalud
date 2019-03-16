@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitea79c6393463eadb90b25cdc84f54e10
+class ComposerStaticInitca961c316d481ea1835f22c4f908fb4e
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -442,25 +442,23 @@ class ComposerStaticInitea79c6393463eadb90b25cdc84f54e10
     );
 
     public static $classMap = array (
-        'App\\Affiliations' => __DIR__ . '/../..' . '/app/Affiliations.php',
-        'App\\Affiliations_documents' => __DIR__ . '/../..' . '/app/Affiliations_documents.php',
-        'App\\Afiliates_information' => __DIR__ . '/../..' . '/app/Afiliates_information.php',
-        'App\\Clinic_history' => __DIR__ . '/../..' . '/app/Clinic_history.php',
+        'App\\Affiliation' => __DIR__ . '/../..' . '/app/Affiliation.php',
+        'App\\AffiliationDocument' => __DIR__ . '/../..' . '/app/AffiliationDocument.php',
+        'App\\AfiliateInformation' => __DIR__ . '/../..' . '/app/AfiliateInformation.php',
+        'App\\AnnexeReference' => __DIR__ . '/../..' . '/app/AnnexeReference.php',
+        'App\\ClinicHistory' => __DIR__ . '/../..' . '/app/ClinicHistory.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
-        'App\\Cost_services' => __DIR__ . '/../..' . '/app/Cost_services.php',
-        'App\\Departments' => __DIR__ . '/../..' . '/app/Departments.php',
+        'App\\CostService' => __DIR__ . '/../..' . '/app/CostService.php',
+        'App\\Departament' => __DIR__ . '/../..' . '/app/Departament.php',
         'App\\Employer' => __DIR__ . '/../..' . '/app/Employer.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
-        'App\\Health_teams' => __DIR__ . '/../..' . '/app/Health_teams.php',
+        'App\\HealthTeam' => __DIR__ . '/../..' . '/app/HealthTeam.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
-        'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
-        'App\\Http\\Controllers\\RoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/RoleController.php',
-        'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -470,26 +468,22 @@ class ComposerStaticInitea79c6393463eadb90b25cdc84f54e10
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Ips' => __DIR__ . '/../..' . '/app/Ips.php',
-        'App\\Municipalitie' => __DIR__ . '/../..' . '/app/Municipalitie.php',
-        'App\\Parafiscals' => __DIR__ . '/../..' . '/app/Parafiscals.php',
+        'App\\Municipality' => __DIR__ . '/../..' . '/app/Municipality.php',
+        'App\\PatientReference' => __DIR__ . '/../..' . '/app/PatientReference.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
-        'App\\Reference_patients' => __DIR__ . '/../..' . '/app/Reference_patients.php',
-        'App\\Report_novelty' => __DIR__ . '/../..' . '/app/Report_novelty.php',
-        'App\\Risk_capture' => __DIR__ . '/../..' . '/app/Risk_capture.php',
-        'App\\Risk_data' => __DIR__ . '/../..' . '/app/Risk_data.php',
-        'App\\Risks' => __DIR__ . '/../..' . '/app/Risks.php',
+        'App\\ReportNovelty' => __DIR__ . '/../..' . '/app/ReportNovelty.php',
+        'App\\Risk' => __DIR__ . '/../..' . '/app/Risk.php',
+        'App\\RiskCapture' => __DIR__ . '/../..' . '/app/RiskCapture.php',
+        'App\\RiskData' => __DIR__ . '/../..' . '/app/RiskData.php',
         'App\\Selectable' => __DIR__ . '/../..' . '/app/Selectable.php',
-        'App\\Selectable_risks' => __DIR__ . '/../..' . '/app/Selectable_risks.php',
-        'App\\Territorial_entity' => __DIR__ . '/../..' . '/app/Territorial_entity.php',
+        'App\\SelectableRisk' => __DIR__ . '/../..' . '/app/SelectableRisk.php',
+        'App\\SocialSecurity' => __DIR__ . '/../..' . '/app/SocialSecurity.php',
+        'App\\TerritorialEntity' => __DIR__ . '/../..' . '/app/TerritorialEntity.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
-        'App\\afialtes_information_parafiscal' => __DIR__ . '/../..' . '/app/afialtes_information_parafiscal.php',
-        'App\\annexes_reference' => __DIR__ . '/../..' . '/app/annexes_reference.php',
-        'App\\health_teams_users' => __DIR__ . '/../..' . '/app/health_teams_users.php',
-        'App\\users_parafiscal' => __DIR__ . '/../..' . '/app/users_parafiscal.php',
         'BeyondCode\\DumpServer\\DumpServerCommand' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerCommand.php',
         'BeyondCode\\DumpServer\\DumpServerServiceProvider' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerServiceProvider.php',
         'BeyondCode\\DumpServer\\Dumper' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/Dumper.php',
@@ -509,7 +503,6 @@ class ComposerStaticInitea79c6393463eadb90b25cdc84f54e10
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
         'Carbon\\Laravel\\ServiceProvider' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Laravel/ServiceProvider.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
-        'CitiesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/CitiesTableSeeder.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
         'Cron\\DayOfMonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/DayOfMonthField.php',
@@ -2029,6 +2022,7 @@ class ComposerStaticInitea79c6393463eadb90b25cdc84f54e10
         'Illuminate\\View\\ViewFinderInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewFinderInterface.php',
         'Illuminate\\View\\ViewName' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewName.php',
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
+        'IpsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/IpsTableSeeder.php',
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/Highlighter.php',
@@ -2295,6 +2289,7 @@ class ComposerStaticInitea79c6393463eadb90b25cdc84f54e10
         'Monolog\\ResettableInterface' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/ResettableInterface.php',
         'Monolog\\SignalHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/SignalHandler.php',
         'Monolog\\Utils' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Utils.php',
+        'MunicipalitiesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/MunicipalitiesTableSeeder.php',
         'Nexmo\\Account\\Balance' => __DIR__ . '/..' . '/nexmo/client/src/Account/Balance.php',
         'Nexmo\\Account\\Client' => __DIR__ . '/..' . '/nexmo/client/src/Account/Client.php',
         'Nexmo\\Account\\PrefixPrice' => __DIR__ . '/..' . '/nexmo/client/src/Account/PrefixPrice.php',
@@ -3492,6 +3487,7 @@ class ComposerStaticInitea79c6393463eadb90b25cdc84f54e10
         'SebastianBergmann\\Timer\\RuntimeException' => __DIR__ . '/..' . '/phpunit/php-timer/src/RuntimeException.php',
         'SebastianBergmann\\Timer\\Timer' => __DIR__ . '/..' . '/phpunit/php-timer/src/Timer.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'SocialSecurityTableSeeder' => __DIR__ . '/../..' . '/database/seeds/SocialSecurityTableSeeder.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface' => __DIR__ . '/..' . '/symfony/console/CommandLoader/CommandLoaderInterface.php',
         'Symfony\\Component\\Console\\CommandLoader\\ContainerCommandLoader' => __DIR__ . '/..' . '/symfony/console/CommandLoader/ContainerCommandLoader.php',
@@ -4244,11 +4240,11 @@ class ComposerStaticInitea79c6393463eadb90b25cdc84f54e10
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitea79c6393463eadb90b25cdc84f54e10::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitea79c6393463eadb90b25cdc84f54e10::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInitea79c6393463eadb90b25cdc84f54e10::$fallbackDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitea79c6393463eadb90b25cdc84f54e10::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitea79c6393463eadb90b25cdc84f54e10::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitca961c316d481ea1835f22c4f908fb4e::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitca961c316d481ea1835f22c4f908fb4e::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInitca961c316d481ea1835f22c4f908fb4e::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitca961c316d481ea1835f22c4f908fb4e::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitca961c316d481ea1835f22c4f908fb4e::$classMap;
 
         }, null, ClassLoader::class);
     }
