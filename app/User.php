@@ -2,16 +2,18 @@
 
     namespace App;
 
-    use Illuminate\Notifications\Notifiable;
-    use Illuminate\Contracts\Auth\MustVerifyEmail;
-    use Illuminate\Foundation\Auth\User as Authenticatable;
+    use Caffeinated\Shinobi\Traits\ShinobiTrait;
+    use Illuminate\Database\Eloquent\Model;
+    use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+    use Illuminate\Auth\Authenticatable;
 
-    class User extends Authenticatable
+    class User extends Model implements AuthenticatableContract
     {
-        use Notifiable, ShinobiTrait;
+        use Authenticatable, ShinobiTrait;
 
         protected $fillable = [
-            'name', 'email', 'password',
+            'name', 'last_name' , 'doc_type', 'doc_number', 'address', 'phone_one', 'birthdate', 'sex', 'bank',
+            'account_bank', 'account_number', 'email', 'username', 'password'
         ];
 
         protected $hidden = [
