@@ -10,5 +10,6 @@ class DatabaseSeeder extends Seeder
         $this->call(MunicipalitiesTableSeeder::class);
         $this->call(SocialSecurityTableSeeder::class);
         $this->call(IpsTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
     }
 }

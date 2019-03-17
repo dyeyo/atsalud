@@ -24,7 +24,11 @@ class CreateUsersTable extends Migration
             $table->string('email','50')->unique();
             $table->string('username','20')->unique();
             $table->text('password');
-            $table->timestamp('email_verified_at')->nullable();
+            $table->text('photo')->nullable();
+            $table->text('speciality')->nullable();
+            $table->decimal('salary')->nullable();
+            $table->text('biography')->nullable();
+            $table->integer('reset_password')->default('0');
             $table->integer('municipality_id')->unsigned()->index();
             $table->foreign('municipality_id')->references('id')->on('municipalities');
             $table->rememberToken();

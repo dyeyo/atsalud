@@ -3,26 +3,21 @@
     namespace App;
 
     use Caffeinated\Shinobi\Traits\ShinobiTrait;
-    use Illuminate\Database\Eloquent\Model;
-    use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
-    use Illuminate\Auth\Authenticatable;
+    use Illuminate\Notifications\Notifiable;
+    use Illuminate\Foundation\Auth\User as Authenticatable;
 
-    class User extends Model implements AuthenticatableContract
+    class User extends Authenticatable
     {
-        use Authenticatable, ShinobiTrait;
+        use Notifiable, ShinobiTrait;
 
         protected $fillable = [
             'name', 'last_name' , 'doc_type', 'doc_number', 'address', 'phone_one', 'birthdate', 'sex', 'bank',
-            'account_bank', 'account_number', 'email', 'username', 'password'
-        ];
+            'account_bank', 'account_number', 'email', 'username'];
 
         protected $hidden = [
             'password', 'remember_token',
         ];
 
-        protected $casts = [
-            'email_verified_at' => 'datetime',
-        ];
 
         public function municipality()
         {
