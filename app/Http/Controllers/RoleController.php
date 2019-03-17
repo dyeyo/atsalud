@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Caffeinated\Shinobi\Models\Permission;
-use Caffeinated\Shinobi\Models\Role;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Caffeinated\Shinobi\Models\Role;
+use Caffeinated\Shinobi\Models\Permission;
 
 class RoleController extends Controller
 {
     public function index()
     {
         $roles = Role::paginate();
+        dd($roles);
         return view('roles.index', compact('roles'));
     }
 

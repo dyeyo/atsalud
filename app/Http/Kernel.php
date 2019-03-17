@@ -55,6 +55,10 @@
             'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
             'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
             'revalidate' => \App\Http\Middleware\RevalidateBackHistory::class,
+            
+            'roles'=>\Caffeinated\Shinobi\Middleware\UserHasRole::class,
+            'permission'=>\Caffeinated\Shinobi\Middleware\UserHasPermission::class,
+
         ];
         /**
          * The priority-sorted list of middleware.

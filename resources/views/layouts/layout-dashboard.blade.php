@@ -145,9 +145,23 @@
                     <li class="user-pro"> <a class="user-space "><img src="images/users/1.jpg" alt="user-img" class="img-circle"><span class="hide-menu">{{auth()->user()->name}}</span></a>
                     </li>
 
-                    <li class="space-li"> <a class="dashboard-a " href="{{route('dashboard')}}"><i class="icon-speedometer"></i><span class="hide-menu">Tablero</span></a>
+                    <li class="space-li">
+                        <a class="dashboard-a " href="{{route('dashboard')}}">
+                            <i class="icon-speedometer"></i>
+                            <span class="hide-menu">Tablero</span>
+                        </a>
                     </li>
-                    <li class="space-li"> <a class="space-a "  href="javascript:void(0);"><i class=" icon-user-follow"></i><span class="hide-menu">Usuarios</span></a>
+                    <li class="space-li">
+                        <a class="space-a "  href="javascript:void(0);">
+                            <i class=" icon-user-follow"></i>
+                            <span class="hide-menu">Usuarios</span>
+                        </a>
+                    </li>
+                    <li class="space-li">
+                        <a class="space-a"  href="{{route('roles.index')}}">
+                            <i class=" icon-user-follow"></i>
+                            <span class="hide-menu">Roles</span>
+                        </a>
                     </li>
                 </ul>
             </nav>
