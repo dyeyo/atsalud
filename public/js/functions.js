@@ -25,11 +25,8 @@ function tempory_password () {
 function change_password () {
     var data = $("#changePassword").serialize();
     var url = route('change.password');
-
     if($("#changePassword").smkValidate()){
-        alert("Hoal")
-
-       /* $.ajax({
+        $.ajax({
             url:url,
             type:'POST',
             data:data,
@@ -37,15 +34,17 @@ function change_password () {
                 $('#changePassword')[0].reset();
             },
             success: function(ans) {
+                        console.log(ans)
                 if($.isEmptyObject(ans.error)){
                     $('#response').html('');
-                    $('#response').append("<div class='alert alert-success alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>"+ ans.success +" <a href='" +route('/')+ "'> INICIAR SESSIÓN </a> </div>");
+                    $('#response').append("<div class='alert alert-success alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>"+ ans.success +"</div>");
+                    location.reload(true);
                 }else {
                     $('#response').html('');
                     $('#response').append("<div class='alert alert-danger alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>"+ ans.error +"</div>");
                 }
 
             },
-        });*/
+        });
     }
 }

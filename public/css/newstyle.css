@@ -253,3 +253,7 @@ a {
 .bg-info {
     background-color: #005691!important;
 }
+.has-feedback .smk-error-msg {
+    right: 10px !important;
+    color: #ff0000;
+}
