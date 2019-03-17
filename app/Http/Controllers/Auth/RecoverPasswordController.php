@@ -6,6 +6,7 @@
     use App\User;
     use Illuminate\Http\Request;
     use App\Http\Controllers\Controller;
+    use Illuminate\Support\Facades\Validator;
 
     class RecoverPasswordController extends Controller
     {
@@ -45,8 +46,28 @@
                 return response()->json(['error' => trans('validation.email')]);
             }
         }
-        public function changePassword()
+        public function changePassword(Request $request)
         {
+           $validations = $this->validate($request, [
+                'pass_one' => 'required',
+                'pass_two' => 'required',
+            ]);
+            if($validations == true){
+                if($request->pass_one != $request->pass_two){
+                    return response()->json(['error'=> trans('translate.validate-password')]);
+                }else{
+                    $changePass =  User::where('id', $request->id)->update(['password' => bcrypt($request->pass_one), 'reset_password' => 0]);
+                    if($changePass){
+                        return response()->json(['success'=> trans('translate.ok')]);
+                    }else{
+                        return response()->json(['error'=> trans('translate.failed')]);
+                    }
+                }
+            }else{
+                return response()->json(['error'=> trans('translate.required')]);
+            }
+
+
 
         }
     }

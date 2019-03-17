@@ -7,7 +7,8 @@
     Route::post('login', 'Auth\LoginController@login')->name('login.access');
     Route::post('logout', 'Auth\LoginController@logout')->name('login.destroy');
     Route::post('temporary-password', 'Auth\RecoverPasswordController@temporyPassword')->name('login.temporary.password');
-    Route::post('change-password', 'Auth\RecoverPasswordController@recoverPassword')->name('change.password');
+    Route::post('change-password', 'Auth\RecoverPasswordController@changePassword')->name('change.password');
+
     Route::group(['middleware' => 'revalidate'], function () {
 
         Route::get('dashboard', 'DashboardController@index')->name('dashboard');

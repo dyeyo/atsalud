@@ -13,11 +13,11 @@
         '503_title' => 'Servicio no disponible !',
         '503_message' => 'Lo sentimos, servicio no disponible.',
 
-
-
-
         'email_not' => 'Dirección de correo electronico no registra',
         'pass_success' => 'Solicitud realizada, nueva contraseña enviada al correo electronico',
         'pass_error' => 'Error en la solicitud de recuperación de contraseña, intente mas tarde, si el error persiste comunicate con soporte ',
-
+        'required' => 'Los campos con (*) son requeridos',
+        'validate-password' => 'Contraseñas no coinciden',
+        'ok' => 'Operación exitosa',
+        'ok' => 'Operación erronea',
     ];

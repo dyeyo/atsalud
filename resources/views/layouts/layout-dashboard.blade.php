@@ -184,19 +184,20 @@
                             </div>
                             <div class="card-body">
                                 <form action="javascript:void(0)" method="post" id="changePassword">
+                                    {{csrf_field()}}
                                     <div class="form-body">
                                         <h3 class="card-title">Actualizar contraseña</h3>
                                         <hr>
                                         <div class="row p-t-20">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <input type="password" id="pass_one" name="pass_two" class="form-control" placeholder="Nueva contraseña" required>
+                                                    <input type="password" id="pass_one" name="pass_one" class="form-control" placeholder="Nueva contraseña(*)" required>
                                                 </div>
                                             </div>
                                             <!--/span-->
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <input type="password" id="pass_one" name="pass_two" class="form-control form-control-danger" placeholder="Repetir contraseña" required>
+                                                    <input type="password" id="pass_two" name="pass_two" class="form-control form-control-danger" placeholder="Repetir contraseña(*)" required>
 
                                                 </div>
                                                 <!--/span-->
@@ -206,9 +207,11 @@
                                         <div class="form-actions">
                                             <button type="submit" class="btn btn-success" onclick="change_password()"> <i class="fa fa-check"></i> Actualizar</button>
                                         </div>
-
                                 </form>
+
                             </div>
+                            <br>
+                            <div id="response"></div>
                         </div>
                     </div>
                 </div>
