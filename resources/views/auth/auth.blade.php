@@ -42,7 +42,7 @@
             {{ csrf_field() }}
             <div class="form-group ">
                 <div class="col-xs-12">
-                    <h3>Recover Password</h3>
+                    <h3>Recuperar contraseña</h3>
                     <p class="text-muted">Ingrese su correo electrónico y para recuperar tu contraseña! </p>
                 </div>
             </div>
