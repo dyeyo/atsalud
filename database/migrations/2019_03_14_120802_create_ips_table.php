@@ -10,10 +10,10 @@ class CreateIpsTable extends Migration
     {
         Schema::create('ips', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('business_name')->nullable();
-            $table->string('tradename')->nullable();
+            $table->text('business_name')->nullable();
+            $table->text('tradename')->nullable();
             $table->string('nit','20')->nullable();
-            $table->string('address')->nullable();
+            $table->text('address')->nullable();
             $table->string('phone')->nullable();
             $table->string('email');
             $table->integer('municipality_id')->unsigned()->index();
