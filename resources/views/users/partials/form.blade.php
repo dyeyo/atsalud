@@ -2,7 +2,6 @@
     {{ Form::label('name','Nombre del usuario')}}
     {{ Form::text('name',null,['class'=>'form-control'])}}
 </div>
-<hr>
 <h3>Lista de Roles</h3>
 <div class="form-group">
     <ul class="list-unstyled">
@@ -19,5 +18,5 @@
     </ul>
 </div>
 <div class="form-group">
-    {{ Form::submit('Guardad',['class','btn btn-primary btn-sm'])}}
+    {{ Form::submit('Guardar',['class'=>'btn btn-info'])}}
 </div>

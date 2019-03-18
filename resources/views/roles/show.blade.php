@@ -1,20 +1,16 @@
 @extends('layouts.layout-dashboard')
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">
-                        Roles
-                    </div>
-                    <div class="card-body">
-                        <p><strong>Nombre </strong>{{$role->name}}</p>
-                        <p><strong>Slug </strong>{{$role->slug}}</p>
-                        <p><strong>Descripcion </strong>{{$role->description}}</p>
-                    </div>
-                </div>
+@include('roles.partials.breadcrumb')
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Nombre <b>{{$role->name}}</b></h4>
+                <p lass="card-title"><strong>Slug </strong>{{$role->slug}}</p>
+                <p lass="card-title"><strong>Descripcion </strong>{{$role->description}}</p>
             </div>
         </div>
     </div>
+</div>
 @endsection
