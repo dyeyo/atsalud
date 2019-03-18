@@ -1,16 +1,27 @@
-@extends('layouts.app')
+@extends('layouts.layout-dashboard')
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Roles
-                        @can('roles.create')
-                            <a href="{{route('roles.create')}}" class="btn btn-sm btn-primary pull-right">
-                                Crear
-                            </a>
-                        @endcan
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h4 class="text-themecolor">Material Form</h4>
+    </div>
+    <div class="col-md-7 align-self-center text-right">
+        <div class="d-flex justify-content-end align-items-center">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                <li class="breadcrumb-item active">Material Form</li>
+            </ol>
+            @can('roles.create')
+                <a href="{{route('roles.create')}}" class="btn btn-info">Crear Rol<i class="fa fa-plus-circle"></i></a>
+            @endcan
+        </div>
+    </div>
+</div>
+<div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-header">Roles 
                     </div>
                     <div class="card-body">
                         <table class="table table-striped table-hover">

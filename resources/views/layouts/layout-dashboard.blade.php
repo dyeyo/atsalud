@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-@routes
+{{-- @routes --}}
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{('images/logo-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/logo-icon.png')}}">
     <title>{{config('app.name')}}</title>
 
-    <link href="{{('node_modules/morrisjs/morris.css')}}" rel="stylesheet">
+    <link href="{{asset('node_modules/morrisjs/morris.css')}}" rel="stylesheet">
     <!--Toaster Popup message CSS -->
-    <link href="{{('node_modules/toast-master/css/jquery.toast.css')}}" rel="stylesheet">
+    <link href="{{asset('node_modules/toast-master/css/jquery.toast.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="{{('css/style.min.css')}}" rel="stylesheet">
-    <link href="{{('css/newstyle.css')}}" rel="stylesheet">
+    <link href="{{asset('css/style.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/newstyle.css')}}" rel="stylesheet">
     <!-- Smoke -->
     <link href="{{asset('node_modules/smoke-v3.1.1/css/smoke.min.css')}}" rel="stylesheet">
 </head>
@@ -151,18 +151,22 @@
                             <span class="hide-menu">Tablero</span>
                         </a>
                     </li>
+                    @can('users.index')   
                     <li class="space-li">
-                        <a class="space-a "  href="javascript:void(0);">
+                        <a class="space-a "  href="{{route('users.index')}}">
                             <i class=" icon-user-follow"></i>
                             <span class="hide-menu">Usuarios</span>
                         </a>
                     </li>
+                    @endcan
+                    @can('roles.index')   
                     <li class="space-li">
                         <a class="space-a"  href="{{route('roles.index')}}">
                             <i class=" icon-user-follow"></i>
                             <span class="hide-menu">Roles</span>
                         </a>
                     </li>
+                    @endcan
                 </ul>
             </nav>
             <!-- End Sidebar navigation -->
@@ -225,44 +229,44 @@
 
     <footer class="footer text-center">
         <span class="copy-1">Desarrollador con todo el</span>
-        <img src="{{('images/footer/heart.png')}}" class="heart-copy">
+        <img src="{{asset('images/footer/heart.png')}}" class="heart-copy">
         <span class="copy-2">
-                  por <a href="https://lacasacreativa.co/" target="_blank" style="color: #000 !important;">lacasacreativa.co</a>
-                </span>
+            por <a href="https://lacasacreativa.co/" target="_blank" style="color: #000 !important;">lacasacreativa.co</a>
+        </span>
     </footer>
 
 </div>
 
-<script src="{{('node_modules/jquery/jquery-3.2.1.min.js')}}"></script>
+<script src="{{asset('node_modules/jquery/jquery-3.2.1.min.js')}}"></script>
 <!-- Bootstrap popper Core JavaScript -->
 <!-- Smoke -->
 <script src="{{asset('node_modules/smoke-v3.1.1/js/smoke.min.js')}}"></script>
 <!-- language -->
 <script src="{{asset('node_modules/smoke-v3.1.1//lang/es.min.js')}}"></script>
-<script src="{{('node_modules/popper/popper.min.js')}}"></script>
-<script src="{{('node_modules/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('node_modules/popper/popper.min.js')}}"></script>
+<script src="{{asset('node_modules/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <!-- slimscrollbar scrollbar JavaScript -->
-<script src="{{('js/perfect-scrollbar.jquery.min.js')}}"></script>
+<script src="{{asset('js/perfect-scrollbar.jquery.min.js')}}"></script>
 <!--Wave Effects -->
-<script src="{{('js/waves.js')}}"></script>
+<script src="{{asset('js/waves.js')}}"></script>
 <!--Menu sidebar -->
-<script src="{{('js/sidebarmenu.js')}}"></script>
+<script src="{{asset('js/sidebarmenu.js')}}"></script>
 <!--Custom JavaScript -->
-<script src="{{('js/custom.min.js')}}"></script>
+<script src="{{asset('js/custom.min.js')}}"></script>
 <!-- ============================================================== -->
 <!-- This page plugins -->
 <!-- ============================================================== -->
 <!--morris JavaScript -->
-<script src="{{('node_modules/raphael/raphael-min.js')}}"></script>
-<script src="{{('node_modules/morrisjs/morris.min.js')}}"></script>
-<script src="{{('node_modules/jquery-sparkline/jquery.sparkline.min.js')}}"></script>
+<script src="{{asset('node_modules/raphael/raphael-min.js')}}"></script>
+<script src="{{asset('node_modules/morrisjs/morris.min.js')}}"></script>
+<script src="{{asset('node_modules/jquery-sparkline/jquery.sparkline.min.js')}}"></script>
 <!-- Popup message jquery -->
-<script src="{{('node_modules/toast-master/js/jquery.toast.js')}}"></script>
+<script src="{{asset('node_modules/toast-master/js/jquery.toast.js')}}"></script>
 <!-- jQuery peity -->
-<script src="{{('node_modules/peity/jquery.peity.min.js')}}"></script>
-<script src="{{('node_modules/peity/jquery.peity.init.js')}}"></script>
-<script src="{{('js/dashboard1.js')}}"></script>
-<script src="{{('js/functions.js')}}"></script>
+<script src="{{asset('node_modules/peity/jquery.peity.min.js')}}"></script>
+<script src="{{asset('node_modules/peity/jquery.peity.init.js')}}"></script>
+<script src="{{asset('js/dashboard1.js')}}"></script>
+<script src="{{asset('js/functions.js')}}"></script>
 </body>
 
 </html>

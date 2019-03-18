@@ -12,7 +12,7 @@
             SocialSecurity::create(['business_name' => 'Cajas de Compensacion familiar', 'tradename' => 'Cajas de Compensacion familiar', 'type' => 'ccf']);
             SocialSecurity::create(['business_name' => 'Caja de Compensacion Familiar Camacol COMFAMILIAR CAMACOL', 'tradename' => 'Caja de Compensacion Familiar Camacol COMFAMILIAR CAMACOL', 'type' => 'ccf']);
             SocialSecurity::create(['business_name' => 'Caja de Compensacion Familiar COMFENALCO ANTIOQUIA', 'tradename' => 'Caja de Compensacion Familiar COMFENALCO ANTIOQUIA', 'type' => 'ccf']);
-            SocialSecurity::create(['business_name' => 'Caja de Compensacion Familiar de Antioquia COMFAMA', 'tradename' => 'Caja de Compensacion Familiar de Antioquia COMFAMA', 'type' => 'ccf']);
+            /*SocialSecurity::create(['business_name' => 'Caja de Compensacion Familiar de Antioquia COMFAMA', 'tradename' => 'Caja de Compensacion Familiar de Antioquia COMFAMA', 'type' => 'ccf']);
             SocialSecurity::create(['business_name' => 'Caja de Compensación Familiar CAJACOPI BARRANQUILLA', 'tradename' => 'Caja de Compensación Familiar CAJACOPI BARRANQUILLA', 'type' => 'ccf']);
             SocialSecurity::create(['business_name' => 'Caja de Compensacion Familiar de Barranquilla COMBARRANQUILLA', 'tradename' => 'Caja de Compensacion Familiar de Barranquilla COMBARRANQUILLA', 'type' => 'ccf']);
             SocialSecurity::create(['business_name' => 'Caja de Compensación Familiar COMFAMILIAR DEL ATLANTICO', 'tradename' => 'Caja de Compensación Familiar COMFAMILIAR DEL ATLANTICO', 'type' => 'ccf']);
@@ -98,7 +98,7 @@
             SocialSecurity::create(['business_name' => 'ENTIDAD COOPERATIVA SOLIDARIA DE SALUD ECOOPSOS ESS EPS-S', 'tradename' => 'Ecoopsos EPS', 'nit' => '832000760', 'image' => 'ecoopsos_eps.jpg', 'type' => 'eps']);
             SocialSecurity::create(['business_name' => 'ASOCIACIÓN MUTUAL EMPRESA SOLIDARIA DE SALUD EMSSANAR E.S.S', 'tradename' => 'Emssanar EPS', 'nit' => '814000337', 'image' => 'emssanar_eps.jpg', 'type' => 'eps']);
             SocialSecurity::create(['business_name' => 'COOPERATIVA DE SALUD COMUNITARIA EMPRESA PROMOTORA DE SALUD SUBSIDIADA  "COMPARTA EPS-S"', 'tradename' => 'Comparta EPS', 'nit' => '804002105', 'image' => 'comparta_eps.jpg', 'type' => 'eps']);
-            SocialSecurity::create(['business_name' => 'ASOCIACIÓN MUTUAL SER EMPRESA SOLIDARIA DE SALUD ESS', 'tradename' => 'Mutual SER', 'nit' => '806008394', 'image' => 'mutual_ser.jpg', 'type' => 'eps']);
+            /*SocialSecurity::create(['business_name' => 'ASOCIACIÓN MUTUAL SER EMPRESA SOLIDARIA DE SALUD ESS', 'tradename' => 'Mutual SER', 'nit' => '806008394', 'image' => 'mutual_ser.jpg', 'type' => 'eps']);
             SocialSecurity::create(['business_name' => 'MEDIMAS EPS', 'tradename' => 'Medimás EPS', 'nit' => '901097473', 'image' => 'medimás_eps.jpg', 'type' => 'eps']);
             SocialSecurity::create(['business_name' => 'SALUDVIDA E.P.S. S.A.', 'tradename' => 'Salid Vida EPS', 'nit' => '830074184', 'image' => 'salid_eps.jpg', 'type' => 'eps']);
             SocialSecurity::create(['business_name' => 'CAPITAL SALUD ENTIDAD PROMOTORA DE SALUD DEL RÉGIMEN SUBSIDIADO SAS "CAPITAL SALUD EPS S SAS"', 'tradename' => 'Capital Salud ', 'nit' => '900298372', 'image' => 'capital_salud.jpg', 'type' => 'eps']);
@@ -116,7 +116,6 @@ COOMEVA   E.P.S.  S.A.', 'tradename' => 'Coomeva EPS', 'nit' => '805000427', 'im
             SocialSecurity::create(['business_name' => 'CRUZ  BLANCA  ENTIDAD PROMOTORA DE SALUD S.A', 'tradename' => 'Cruz  Blanca EPS', 'nit' => '830009783', 'image' => 'cruz_eps.jpg', 'type' => 'eps']);
             SocialSecurity::create(['business_name' => 'CAJA DE COMPENSACION FAMILIAR COMPENSAR', 'tradename' => 'COMPENSAR', 'nit' => '860066942', 'image' => 'compensar_compensar.jpg', 'type' => 'eps']);
             SocialSecurity::create(['business_name' => 'CAJA DE COMPENSACION FAMILIAR DEL VALLE DEL CAUCA', 'tradename' => 'COMFENALCO VALLE', 'nit' => '890303093', 'image' => 'comfenalco_valle.jpg', 'type' => 'eps']);
-            SocialSecurity::create(['business_name' => 'ALIANSALUD ENTIDAD PROMOTORA DE SALUD SA', 'tradename' => 'ALIANSALUD EPS', 'nit' => '830113831', 'image' => 'aliansalud_eps.jpg', 'type' => 'eps']);
-
+            SocialSecurity::create(['business_name' => 'ALIANSALUD ENTIDAD PROMOTORA DE SALUD SA', 'tradename' => 'ALIANSALUD EPS', 'nit' => '830113831', 'image' => 'aliansalud_eps.jpg', 'type' => 'eps']);*/
         }
     }

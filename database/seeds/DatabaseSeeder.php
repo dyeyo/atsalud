@@ -11,5 +11,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SocialSecurityTableSeeder::class);
         $this->call(IpsTableSeeder::class);
         $this->call(UsersTableSeeder::class);
+        $this->call(PermissionsTableSeeder::class);
     }
 }

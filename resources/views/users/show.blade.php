@@ -6,15 +6,14 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        Roles
+                        Usuario
                     </div>
                     <div class="card-body">
-                        <p><strong>Nombre </strong>{{$role->name}}</p>
-                        <p><strong>Slug </strong>{{$role->slug}}</p>
-                        <p><strong>Descripcion </strong>{{$role->description}}</p>
+                        <p><strong>Nombre </strong>{{$user->name}}</p>
+                        <p><strong>Email </strong>{{$user->email}}</p>
                     </div>
                 </div>
-            </div>
+            </d iv>
         </div>
     </div>
 @endsection
