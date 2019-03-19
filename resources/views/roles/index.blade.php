@@ -42,8 +42,7 @@
                                 <td align="center">
                                     @can('roles.show')
                                         <a href="{{route('roles.show',$role->id)}}"
-                                           class="btn waves-effect waves-light btn-info font-white"><i class="fa fa-eye"
-                                                                                                       aria-hidden="true"></i>
+                                           class="btn waves-effect waves-light btn-info font-white"><i class="fa fa-eye" aria-hidden="true"></i>
                                             Ver</a>
                                     @endcan
                                     @can('roles.edit')

@@ -10,7 +10,7 @@ class RolesTableSeeder extends Seeder
     {
         Role::create([
             'name'        => 'Super Administrador',
-            'slug'          => 'super-admin',
+            'slug'          => 'super.admin',
             'description'   => 'Rol con acceso total al sistema',
             'special'       => 'all-access',
         ]);
