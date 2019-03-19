@@ -1,2 +1,2 @@
 
-<h4 class="text-themecolor">Modulo de IPS</h4>
+<h4 class="text-themecolor">Modulo de Seguridad Social</h4>

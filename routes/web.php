@@ -183,6 +183,21 @@
 
         Route::get('municipalities/{id}', 'MunicipalityController@loadMunicipality')->name('load.municipalities');
 
+        //SEGURITY SOCIAL
+        Route::get('socialSecurity', 'SocialSecurityController@index')->name('socialSecurity.index')->middleware('permission:socialSecurity.index');
+
+        Route::get('socialSecurity/create', 'SocialSecurityController@create')->name('socialSecurity.create')->middleware('permission:socialSecurity.create');
+
+        Route::post('socialSecurity/store', 'SocialSecurityController@store')->name('socialSecurity.store')->middleware('permission:socialSecurity.create');
+
+        Route::put('socialSecurity/{socialSecuritys}', 'SocialSecurityController@update')->name('socialSecurity.update')->middleware('permission:socialSecurity.edit');
+
+        Route::get('socialSecurity/{socialSecuritys}', 'SocialSecurityController@show')->name('socialSecurity.show')->middleware('permission:socialSecurity.show');
+
+        Route::delete('socialSecurity/{socialSecuritys}', 'SocialSecurityController@destroy')->name('socialSecurity.destroy')->middleware('permission:socialSecurity.destroy');
+
+        Route::get('socialSecurity/{socialSecuritys}/edit', 'SocialSecurityController@edit')->name('socialSecurity.edit')->middleware('permission:socialSecurity.edit');
+
 
         });
     });

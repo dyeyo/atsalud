@@ -32,11 +32,19 @@
                             </a>
                         </li>
                     @endcan
-                    @can('users.index')
+                    @can('ips.index')
                         <li class="space-li">
                             <a class="space-a " href="{{route('ips.index')}}">
                                 <i class=" icon-user-follow"></i>
                                 <span class="hide-menu">IPS</span>
+                            </a>
+                        </li>
+                    @endcan
+                    @can('socialSecurity.index')
+                        <li class="space-li">
+                            <a class="space-a " href="{{route('socialSecurity.index')}}">
+                                <i class=" icon-user-follow"></i>
+                                <span class="hide-menu">Seguridad social</span>
                             </a>
                         </li>
                     @endcan

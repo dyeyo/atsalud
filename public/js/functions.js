@@ -177,3 +177,58 @@ function update_Ips(id) {
         });
     }
 }
+
+function create_socialSegurity() {
+    var data = $('#newSG').serialize();
+    var url = route('socialSecurity.store');
+    if ($('#newSG').smkValidate()) {
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: data,
+            beforeSend: function () {
+                $('#newSG')[0].reset();
+            },
+            success: function (ans) {
+                if ($.isEmptyObject(ans.error)) {
+                    $('#response').html('');
+                    $('#response').append("<div class='alert alert-success alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>" + ans.success + "</div>");
+                    setTimeout(function() {
+                        $("#response").fadeOut(1500);
+                    },3000);
+
+                } else {
+                    $('#response').html('');
+                    $('#response').append("<div class='alert alert-danger alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>" + ans.error + "</div>");
+                }
+
+            },
+        });
+    }
+}
+
+function update_SegSoc(id) {
+    var data = $('#editSegSoc').serialize();
+    var url = route('socialSecurity.update', {id: id});
+    if ($('#editSegSoc').smkValidate()) {
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: data,
+            success: function (ans) {
+                if ($.isEmptyObject(ans.error)) {
+                    $('#response').html('');
+                    $('#response').append("<div class='alert alert-success alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>" + ans.success + "</div>");
+                    setTimeout(function() {
+                        $("#response").fadeOut(1500);
+                    },3000);
+
+                } else {
+                    $('#response').html('');
+                    $('#response').append("<div class='alert alert-danger alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>" + ans.error + "</div>");
+                }
+
+            },
+        });
+    }
+}

@@ -21,7 +21,7 @@ class CreateSocialSecurityTable extends Migration
             $table->string('address')->nullable();
             $table->string('email')->nullable();
             $table->string('phone', '20')->nullable();
-            $table->string('image','50')->nullable();
+            $table->string('image','200')->nullable();
             $table->string('type','100');
             $table->timestamps();
         });

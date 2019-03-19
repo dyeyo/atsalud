@@ -1,6 +1,10 @@
 <div class="card">
     <div class="card-body">
         <div class="form-group">
+            {{ Form::label('legal_representative', 'Reprensentante Legal') }}
+            {{ Form::text('legal_representative', null, ['class' => 'form-control', 'id' => 'legal_representative']) }}
+        </div>
+        <div class="form-group">
             {{ Form::label('business_name', 'Nombre del Negocio') }}
             {{ Form::text('business_name', null, ['class' => 'form-control', 'id' => 'business_name']) }}
         </div>
@@ -9,7 +13,7 @@
             {{ Form::text('tradename', null, ['class' => 'form-control', 'id' => 'tradename']) }}
         </div>
         <div class="form-group">
-            {{ Form::label('nit', 'Nit') }}
+            {{ Form::label('nit', 'NIT') }}
             {{ Form::text('nit', null, ['class' => 'form-control', 'id' => 'nit']) }}
         </div>
         <div class="form-group">
@@ -27,6 +31,14 @@
         <div class="form-group">
             {{ Form::label('email', 'Correo Electronico') }}
             {{ Form::text('email', null, ['class' => 'form-control', 'id' => 'email']) }}
+        </div>
+        <div class="form-group">
+            {{ Form::label('email', 'Correo Electronico') }}
+            {{ Form::text('email', null, ['class' => 'form-control', 'id' => 'email']) }}
+        </div>
+        <div class="form-group">
+            {{ Form::label('image', 'Foto de EPS') }}
+            {{ Form::file('image', null, ['class' => 'form-control', 'id' => 'image']) }}
         </div>
         <h3 class="card-title">Ubicación</h3>
         <hr>

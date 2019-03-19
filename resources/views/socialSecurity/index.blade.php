@@ -3,24 +3,24 @@
 @section('content')
     <div class="row page-titles">
         <div class="col-md-5 align-self-center">
-            @include('ips.partials.breadcrumb')
+            @include('socialSecurity.partials.breadcrumb')
         </div>
         <div class="col-md-7 align-self-center text-right">
             <div class="d-flex justify-content-end align-items-center">
                 <ol class="breadcrumb m-b-10">
                     <li class="breadcrumb-item"><a href="{{route('/')}}">Dasboard</a></li>
-                    <li class="breadcrumb-item"><a href="{{route('ips.index')}}">ips</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('socialSecurity.index')}}">Seguridad Social</a></li>
                 </ol>
-                @can('ips.create')
-                    <a data-toggle="modal" class="btn btn-info d-none d-lg-block m-l-15"
-                           style="color: #fff !important;" href="#myModal"><i class="fa fa-plus-circle"></i>Nueva IPS</a>
+                @can('socialSecurity.create')
+                    <a href="{{route('socialSecurity.create')}}" class="btn btn-info d-none d-lg-block m-l-15"
+                       style="color: #fff !important;"><i class="fa fa-plus-circle"></i> Nuevo Seguridad Social</a>
                 @endcan
             </div>
         </div>
     </div>
     <div class="card">
         <div class="card-header bg-info">
-            <h4 class="m-b-0 text-white">ips del sistema</h4>
+            <h4 class="m-b-0 text-white">Seguridad Social</h4>
         </div>
         <div id="response"></div>
         <div class="card-body">
@@ -30,35 +30,37 @@
                     <tr align="center">
                         <th>#</th>
                         <th>Nombre</th>
+                        <th>Nombre comercial</th>
                         <th>Acciones</th>
                     </tr>
                     </thead>
                     <tbody>
                     <?php $i = 1?>
-                    @foreach($ips as $item)
+                    @foreach($socSeg as $item)
                         @if($item->slug != 'super.admin')
                             <tr>
-                                <td align="center">{{$item->id}}</td>
+                                <td align="center">{{$i}}</td>
                                 <td>{{$item->business_name}}</td>
+                                <td>{{$item->tradename}}</td>
                                 <td align="center">
-                                    @can('ips.show')
-                                        <a href="{{route('ips.show',$item->id)}}"
+                                    @can('socialSecurity.show')
+                                        <a href="{{route('socialSecurity.show',$item->id)}}"
                                            class="btn waves-effect waves-light btn-info font-white">
                                             <i class="fa fa-eye" aria-hidden="true"></i>
                                             Ver</a>
                                     @endcan
-                                    @can('ips.edit')
-                                            <a href="{{route('ips.edit',$item->id)}}"
+                                    @can('socialSecurity.edit')
+                                            <a href="{{route('socialSecurity.edit',$item->id)}}"
                                                class="btn waves-effect waves-light btn-warning font-white"><i
                                                         class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a>
                                     @endcan
-                                    @can('ips.destroy')
-                                        <a href="{{route('ips.destroy',$item->id)}}"
-                                           onclick="event.preventDefault();document.getElementById('deleteIps').submit();"
+                                    @can('socialSecurity.destroy')
+                                        <a href="{{route('socialSecurity.destroy',$item->id)}}"
+                                           onclick="event.preventDefault();document.getElementById('deleteSocialSecurity').submit();"
                                            class="btn waves-effect waves-light btn-danger font-white"><i
                                                 class="fa fa-trash"></i> Eliminar</a>
-                                        <form method="POST" id="deleteIps"
-                                              action="{{route('ips.destroy',$item->id)}}" style="display: none;">
+                                        <form method="POST" id="deleteSocialSecurity"
+                                              action="{{route('socialSecurity.destroy',$item->id)}}" style="display: none;">
                                             {{method_field('DELETE')}}
                                             {{csrf_field()}}
                                         </form>
@@ -75,182 +77,7 @@
         </div>
     </div>
     <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Agregar IPS</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form action="javascript:void(0)" method="post" id="newIps" name="newIps">
-                        {{csrf_field()}}
-                        <div class="form-body">
-                            <h3 class="card-title">Datos de la IPS</h3>
-                            <hr>
-                            <div class="row p-t-20">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" id="business_name" name="business_name" class="form-control" placeholder="Nombre del Negocio (*)" required>
-                                    </div>
-                                </div>
-                                <!--/span-->
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" id="tradename" name="tradename" class="form-control form-control-danger" placeholder="Nombre comercial(*)" required>
-                                    </div>
-                                    <!--/span-->
-                                </div>
-                            </div>
-                            <div class="row p-t-20">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" id="nit" name="nit" class="form-control" placeholder="NIT(*)" required>
-                                    </div>
-                                </div>
-                                <!--/span-->
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" id="address" name="address" class="form-control form-control-danger" placeholder="Dirección" required>
-                                    </div>
-                                    <!--/span-->
-                                </div>
-                            </div>
-                            <div class="row p-t-20">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" id="phone" name="phone" class="form-control" placeholder="Teléfono" required>
-                                    </div>
-                                </div>
-                                <!--/span-->
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="email" id="email" name="email" class="form-control form-control-danger" placeholder="Correo Electronico(*)" required>
-                                    </div>
-                                    <!--/span-->
-                                </div>
-                            </div>
-                            <h3 class="card-title">Ubicación</h3>
-                            <hr>
-                            <div class="row p-t-20">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <select name="departament_id" id="departament_id" class="select2 form-control custom-select" style="width: 100%; height:36px;" onchange="municipalities()">
-                                            <option value="-1">[Seleccione un Departamento]</option>
-                                            @foreach($departaments as $departament)
-                                                <option value="{{$departament->id}}">{{$departament->name}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <select name="municipality_id" id="municipality_id" class="select2 form-control custom-select" >
-                                            <option value="-1">[Seleccione un Municipio]</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-success" onclick="create_ips()"> <i class="fa fa-check"></i> Guardar</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    {{--EDITAR--}}
-    {{--<div class="modal fade" id="myModalEditar" role="dialog">--}}
-        {{--<div class="modal-dialog">--}}
-            {{--<!-- Modal content-->--}}
-            {{--<div class="modal-content">--}}
-                {{--<div class="modal-header">--}}
-                    {{--<h4 class="modal-title">Agregar IPS</h4>--}}
-                    {{--<button type="button" class="close" data-dismiss="modal">&times;</button>--}}
-                {{--</div>--}}
-                {{--<div class="modal-body">--}}
-                    {{--<form action="javascript:void(0)" method="post" id="editIps" name="editIps">--}}
-                        {{--{{method_field('PUT')}}--}}
-                        {{--{{csrf_field()}}--}}
-                        {{--<div class="form-body">--}}
-                            {{--<h3 class="card-title">Datos de la IPS</h3>--}}
-                            {{--<hr>--}}
-                            {{--<div class="row p-t-20">--}}
-                                {{--<div class="col-md-6">--}}
-                                    {{--<div class="form-group">--}}
-                                        {{--<input type="text" id="business_name" name="business_name" value="{{$ips->business_name}}"  class="form-control" placeholder="Nombre del Negocio (*)" required>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                                {{--<!--/span-->--}}
-                                {{--<div class="col-md-6">--}}
-                                    {{--<div class="form-group">--}}
-                                        {{--<input type="text" id="tradename" name="tradename" value="{{$ips->tradename}}"  class="form-control form-control-danger" placeholder="Nombre comercial(*)" required>--}}
-                                    {{--</div>--}}
-                                    {{--<!--/span-->--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                            {{--<div class="row p-t-20">--}}
-                                {{--<div class="col-md-6">--}}
-                                    {{--<div class="form-group">--}}
-                                        {{--<input type="text" id="nit" name="nit" class="form-control" value="{{$ips->nit}}"  placeholder="NIT(*)" required>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                                {{--<!--/span-->--}}
-                                {{--<div class="col-md-6">--}}
-                                    {{--<div class="form-group">--}}
-                                        {{--<input type="text" id="address" name="address" value="{{$ips->address}}"  class="form-control form-control-danger" placeholder="Dirección" required>--}}
-                                    {{--</div>--}}
-                                    {{--<!--/span-->--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                            {{--<div class="row p-t-20">--}}
-                                {{--<div class="col-md-6">--}}
-                                    {{--<div class="form-group">--}}
-                                        {{--<input type="text" id="phone" name="phone" value="{{$ips->phone}}"  class="form-control" placeholder="Teléfono" required>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                                {{--<!--/span-->--}}
-                                {{--<div class="col-md-6">--}}
-                                    {{--<div class="form-group">--}}
-                                        {{--<input type="email" id="email" name="email" value="{{$ips->email}}"  class="form-control form-control-danger" placeholder="Correo Electronico(*)" required>--}}
-                                    {{--</div>--}}
-                                    {{--<!--/span-->--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                            {{--<h3 class="card-title">Ubicación</h3>--}}
-                            {{--<hr>--}}
-                            {{--<div class="row p-t-20">--}}
-                                {{--<div class="col-md-6">--}}
-                                    {{--<div class="form-group">--}}
-                                        {{--<select name="departament_id" id="departament_id" class="select2 form-control custom-select" style="width: 100%; height:36px;" onchange="municipalities()">--}}
-                                            {{--<option value="{{$ips->departament_id}}" >[Seleccione un Departamento]</option>--}}
-                                            {{--@foreach($departaments as $departament)--}}
-                                                {{--<option value="{{$departament->departament_id}}">{{$departament->departament_id}}</option>--}}
-                                            {{--@endforeach--}}
-                                        {{--</select>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                                {{--<div class="col-md-6">--}}
-                                    {{--<div class="form-group">--}}
-                                        {{--<select name="municipality_id" id="municipality_id" class="select2 form-control custom-select" >--}}
-                                            {{--<option value="{{$ips->municipality_id}}" ></option>--}}
-                                        {{--</select>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</form>--}}
-                {{--</div>--}}
-                {{--<div class="modal-footer">--}}
-                    {{--<button class="btn btn-success" onclick="update_Ips({{$ips->id}})"> <i class="fa fa-check"></i> Guardar</button>--}}
-                    {{--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
+
 @endsection
 @section('script')
     <!-- This is data table -->
