@@ -32,6 +32,14 @@
                             </a>
                         </li>
                     @endcan
+                    @can('users.index')
+                        <li class="space-li">
+                            <a class="space-a " href="{{route('ips.index')}}">
+                                <i class=" icon-user-follow"></i>
+                                <span class="hide-menu">IPS</span>
+                            </a>
+                        </li>
+                    @endcan
                 </ul>
             </nav>
             <!-- End Sidebar navigation -->

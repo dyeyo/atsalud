@@ -92,6 +92,7 @@
                             <div class="form-actions">
                                 <button class="btn btn-success" onclick="update_role({{$role->id}})"> <i class="fa fa-check"></i> Guardar</button>
                             </div>
+                        </div>
                     </form>
                 </div>
                 <br>

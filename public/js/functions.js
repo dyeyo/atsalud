@@ -65,6 +65,9 @@ function create_role() {
                 if ($.isEmptyObject(ans.error)) {
                     $('#response').html('');
                     $('#response').append("<div class='alert alert-success alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>" + ans.success + "</div>");
+                    setTimeout(function() {
+                        $("#response").fadeOut(1500);
+                    },3000);
 
                 } else {
                     $('#response').html('');
@@ -88,6 +91,9 @@ function update_role(id) {
                 if ($.isEmptyObject(ans.error)) {
                     $('#response').html('');
                     $('#response').append("<div class='alert alert-success alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>" + ans.success + "</div>");
+                    setTimeout(function() {
+                        $("#response").fadeOut(1500);
+                    },3000);
 
                 } else {
                     $('#response').html('');
@@ -111,5 +117,63 @@ function municipalities() {
         })
     } else {
         $('#municipality_id').html('<option value="-1">[Seleccione un Municipio]</option>');
+    }
+}
+
+function create_ips() {
+    var data = $('#newIps').serialize();
+    var url = route('ips.store');
+    if ($('#newIps').smkValidate()) {
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: data,
+            beforeSend: function () {
+                $('#newIps')[0].reset();
+            },
+            success: function (ans) {
+                if ($.isEmptyObject(ans.error)) {
+                    $('#response').html('');
+                    $("#myModal").modal('hide');//ocultamos el modal
+                    $('body').removeClass('modal-open');//eliminamos la clase del body para poder hacer scroll
+                    $('.modal-dialog').remove();//eliminamos el backdrop del modal
+                    $('#response').append("<div class='alert alert-success alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>" + ans.success + "</div>");
+                    setTimeout(function() {
+                        $("#response").fadeOut(1500);
+                    },3000);
+
+                } else {
+                    $('#response').html('');
+                    $('#response').append("<div class='alert alert-danger alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>" + ans.error + "</div>");
+                }
+
+            },
+        });
+    }
+}
+
+function update_Ips(id) {
+    var data = $('#editIps').serialize();
+    var url = route('ips.update', {id: id});
+    if ($('#editIps').smkValidate()) {
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: data,
+            success: function (ans) {
+                if ($.isEmptyObject(ans.error)) {
+                    $('#response').html('');
+                    $('#response').append("<div class='alert alert-success alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>" + ans.success + "</div>");
+                    setTimeout(function() {
+                        $("#response").fadeOut(1500);
+                    },3000);
+
+                } else {
+                    $('#response').html('');
+                    $('#response').append("<div class='alert alert-danger alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>" + ans.error + "</div>");
+                }
+
+            },
+        });
     }
 }
