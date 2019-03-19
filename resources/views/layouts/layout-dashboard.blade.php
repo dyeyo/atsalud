@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-{{-- @routes --}}
+@routes
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +13,7 @@
     <link href="{{asset('node_modules/morrisjs/morris.css')}}" rel="stylesheet">
     <!--Toaster Popup message CSS -->
     <link href="{{asset('node_modules/toast-master/css/jquery.toast.css')}}" rel="stylesheet">
+    @yield('styles')
     <!-- Custom CSS -->
     <link href="{{asset('css/style.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/newstyle.css')}}" rel="stylesheet">
@@ -106,7 +107,7 @@
                     @endif
 
                     <li class="nav-item dropdown u-pro" style="padding: 0 10px;">
-                        <a class="nav-link dropdown-toggle  profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/users/1.jpg" alt="user" class=""> <span class="hidden-md-down"><i class="fa fa-angle-down"></i></span> </a>
+                        <a class="nav-link dropdown-toggle  profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{asset('images/users/1.jpg')}}" alt="user" class=""> <span class="hidden-md-down"><i class="fa fa-angle-down"></i></span> </a>
                         <div class="dropdown-menu dropdown-menu-right animated flipInY">
                         @if(auth()->user()->reset_password==1)
 
@@ -133,48 +134,8 @@
             </div>
         </nav>
     </header>
-    <aside class="left-sidebar">
-        <!-- Sidebar scroll-->
-        <div class="scroll-sidebar">
-            <!-- Sidebar navigation-->
-            @if(auth()->user()->reset_password==1)
 
-             @else
-            <nav class="sidebar-nav">
-                <ul id="sidebarnav">
-                    <li class="user-pro"> <a class="user-space "><img src="images/users/1.jpg" alt="user-img" class="img-circle"><span class="hide-menu">{{auth()->user()->name}}</span></a>
-                    </li>
-
-                    <li class="space-li">
-                        <a class="dashboard-a " href="{{route('dashboard')}}">
-                            <i class="icon-speedometer"></i>
-                            <span class="hide-menu">Tablero</span>
-                        </a>
-                    </li>
-                    @can('users.index')   
-                    <li class="space-li">
-                        <a class="space-a "  href="{{route('users.index')}}">
-                            <i class=" icon-user-follow"></i>
-                            <span class="hide-menu">Usuarios</span>
-                        </a>
-                    </li>
-                    @endcan
-                    @can('roles.index')   
-                    <li class="space-li">
-                        <a class="space-a"  href="{{route('roles.index')}}">
-                            <i class=" icon-user-follow"></i>
-                            <span class="hide-menu">Roles</span>
-                        </a>
-                    </li>
-                    @endcan
-                </ul>
-            </nav>
-            <!-- End Sidebar navigation -->
-            @endif
-        </div>
-        <!-- End Sidebar scroll-->
-    </aside>
-
+@include('layouts.menu.menu')
     <div class="page-wrapper">
 
         <div class="container-fluid">
@@ -227,7 +188,7 @@
 
     </div>
 
-    <footer class="footer text-center">
+    <footer class="footer text-center" style="position: relative !important;">
         <span class="copy-1">Desarrollador con todo el</span>
         <img src="{{asset('images/footer/heart.png')}}" class="heart-copy">
         <span class="copy-2">
@@ -265,8 +226,8 @@
 <!-- jQuery peity -->
 <script src="{{asset('node_modules/peity/jquery.peity.min.js')}}"></script>
 <script src="{{asset('node_modules/peity/jquery.peity.init.js')}}"></script>
-<script src="{{asset('js/dashboard1.js')}}"></script>
 <script src="{{asset('js/functions.js')}}"></script>
+@yield('script')
 </body>
 
 </html>

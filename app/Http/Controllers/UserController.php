@@ -6,21 +6,28 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Caffeinated\Shinobi\Models\Role;
 use App\User;
+use Caffeinated\Shinobi\Models\Permission;
+use App\Departament;
 
 class UserController extends Controller
 {
    
     public function index()
     {
-        $users=User::paginate();
+        $users = User::queryusers();
+
         return view('users.index',compact('users'));
     }
-
+    public function create (Request $request)
+    {
+        $permissions = Permission::get();
+        $departaments = Departament::all();
+        return view('users.create', compact('permissions', 'departaments'));
+    }
     public function show(User $user)
     {
         return view('users.show',compact('user'));
     }
-
     public function edit(User $user)
     {
         $roles=Role::get();

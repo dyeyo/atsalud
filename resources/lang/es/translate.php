@@ -19,5 +19,5 @@
         'required' => 'Los campos con (*) son requeridos',
         'validate-password' => 'Contraseñas no coinciden',
         'ok' => 'Operación exitosa',
-        'ok' => 'Operación erronea',
+        'failed' => 'Operación erronea',
     ];

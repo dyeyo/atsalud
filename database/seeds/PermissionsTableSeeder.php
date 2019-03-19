@@ -232,7 +232,7 @@ class PermissionsTableSeeder extends Seeder
 
         //Afiliaciones
         Permission::create([
-            'module'        => 'aficilaciones',
+            'module'        => 'afiliaciones',
             'name'          => 'Navegar y listar afiliaciones',
             'slug'          => 'affiliations.index',
             'description'   => 'Lista y navega todos los afiliaciones en el sistema',
