@@ -93,7 +93,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <br>
+                            <br> 
                             <input type="hidden" name="id" id="id" value="{{auth()->user()->id}}">
                             <div class="form-actions">
                                 <button class="btn btn-success" onclick="update_Ips({{$ips->id}})"> <i class="fa fa-check"></i> Guardar</button>
