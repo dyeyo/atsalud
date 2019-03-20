@@ -7,7 +7,7 @@ class DepartamentsTableSeeder extends Seeder
 
     public function run()
     {
-        Departament::create(['name' =>'Antioqui']);
+        Departament::create(['name' =>'Antioquia']);
         Departament::create(['name' =>'Atlántico']);
         Departament::create(['name' =>'Bogotá, D.C']);
         Departament::create(['name' =>'Bolívar']);

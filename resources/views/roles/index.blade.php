@@ -20,7 +20,7 @@
     </div>
     <div class="card">
         <div class="card-header bg-info">
-            <h4 class="m-b-0 text-white">Roles del sistema</h4>
+            <h4 class="m-b-0 text-white">Lista de roles del sistema</h4>
         </div>
         <div class="card-body">
             <div class="table-responsive m-t-40">

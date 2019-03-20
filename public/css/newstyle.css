@@ -17,6 +17,9 @@
   background:rgba(0,0,0,0.6);
   z-index:-1;
 }
+.page-wrapper{
+    min-height: 560px !important;
+}
 .content-title{
   display: flex;
   width: auto;
@@ -179,6 +182,9 @@
     .content-title {
       display: none;
     }
+      .font-white {
+          margin-top: 5px;
+      }
   }
 
   .user-space:hover {
@@ -276,4 +282,16 @@ a {
 }
 .page-titles .breadcrumb .breadcrumb-item+.breadcrumb-item::before {
     color: #005b99 !important;
+}
+.close {
+    color: #fdfbfb !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: #fff;
+    border: 1px solid #22c7b7 !important;
+    background-color: #22c7b7 !important;
+}
+.logo-eps {
+    height: auto;
+    width: 100px;
 }
