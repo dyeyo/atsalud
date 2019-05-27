@@ -29,4 +29,14 @@ class Functions extends Controller
             $message->to($addressee)->subject($affair);
         });
     }
+    function upload($data, $route, $new){
+        $file = $data;
+        $path = public_path() . '/uploads/'.$route;
+        $fileName = uniqid() . $data->getClientOriginalName();
+        $extensionFile = $data->getClientOriginalExtension();
+        $fileNameNew=  $new.".".$extensionFile;
+        $file->move($path, $fileNameNew,   \File::get($data));
+
+        return   $fileNameNew;
+    }
 }

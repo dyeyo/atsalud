@@ -15,14 +15,20 @@ class IpsController extends Controller
         $ips = Ips::all();
         $departaments = Departament::all();
 
-        return view('ips.index',compact('ips', 'departaments'));
+        return view('ips.index', compact('ips', 'departaments'));
     }
 
-    public function create()
+    public function loadTable($id)
     {
-//        $departaments = Departament::all();
-//        return view('ips.create', compact( 'departaments'));
+        if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+            $ips = Ips::where('municipality_id', $id)->select('id', 'business_name')->get();
+            return view('ips.partials.table', compact('ips'));
+        } else {
+            return redirect()->route('dashboard');
+        }
     }
+
+    //public function create() {}
 
     public function store(Request $request)
     {
@@ -47,50 +53,64 @@ class IpsController extends Controller
 
     public function show($id)
     {
-        if ($id != 1) {
+        if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
             if (Ips::where('id', '=', $id)->count() > 0) {
                 $ips = Ips::find($id);
-                return view('ips.show', compact('ips'));
-            }else{
+                $ips->municipality;
+                $ips->municipality->departament;
+                return response()->json($ips);
+            } else {
                 return redirect()->route('ips.index');
             }
+        } else {
+            return redirect()->route('dashboard');
         }
     }
 
     public function edit($id)
     {
-        $departaments = Departament::all();
-        if (Ips::where('id', '=', $id)->count() > 0) {
-            $ips = Ips::find($id);
-            return view('ips.edit', compact('ips','departaments'));
+        if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+            if (Ips::where('id', '=', $id)->count() > 0) {
+                $ips = Ips::find($id);
+                $ips->municipality;
+                $ips->municipality->departament;
+                return response()->json($ips);
+            } else {
+                return redirect()->route('ips.index');
+            }
         } else {
-            return redirect()->route('ips.index');
+            return redirect()->route('dashboard');
         }
     }
 
     public function update(Request $request, $id)
     {
-        $validations = $this->validate($request, [
-            'business_name' => 'required',
-            'tradename' => 'required',
-            'nit' => 'required',
-            'email' => 'required',
-            'municipality_id' => 'required',
-        ]);
-        if ($validations == true) {
-            $ips = Ips::find($id);
-            $ips->update($request->all());
-            if ($ips) {
-                return response()->json(['success' => trans('translate.ok')]);
+        if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+            $validations = $this->validate($request, [
+                'business_name' => 'required',
+                'tradename' => 'required',
+                'nit' => 'required',
+                'email' => 'required',
+                'municipality_id' => 'required',
+            ]);
+            if ($validations == true) {
+                $ips = Ips::find($id);
+                $ips->update($request->all());
+                if ($ips) {
+                    return response()->json(['success' => trans('translate.ok')]);
+                } else {
+                    return response()->json(['error' => trans('translate.failed')]);
+                }
             } else {
-                return response()->json(['error' => trans('translate.failed')]);
+                return response()->json(['error' => trans('translate.required')]);
             }
         } else {
-            return response()->json(['error' => trans('translate.required')]);
+            return redirect()->route('dashboard');
         }
     }
 
-    public function destroy($id)
+    public
+    function destroy($id)
     {
         Ips::find($id)->delete();
         return back()->with('info', 'Eliminado correctamente');

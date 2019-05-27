@@ -46,34 +46,36 @@
             Route::get('dashboard/module/users/{user}/edit', 'UserController@edit')->name('users.edit')->middleware('permission:users.edit');
 
             //entities
-            Route::get('entities', 'EntityController@index')->name('entities.index')->middleware('permission:entities.index');
+            Route::get('dashboard/module/entities', 'EntityController@index')->name('entities.index')->middleware('permission:entities.index');
+            Route::get('dashboard/module/entities/table', 'EntityController@loadTable')->name('entities.load')->middleware('permission:entities.show');
+            //Route::get('dashboard/module/entities/create', 'EntityController@create')->name('entities.create')->middleware('permission:entities.create');
 
-            Route::get('entities/create', 'EntityController@create')->name('entities.create')->middleware('permission:entities.create');
+            Route::post('dashboard/module/entities/store', 'EntityController@store')->name('entities.store')->middleware('permission:entities.create');
 
-            Route::post('entities/store', 'EntityController@store')->name('entities.store')->middleware('permission:entities.create');
+            Route::put('dashboard/module/entities/{entity}', 'EntityController@update')->name('entities.update')->middleware('permission:entities.edit');
 
-            Route::put('entities/{entity}', 'EntityController@update')->name('entities.update')->middleware('permission:entities.edit');
+            Route::get('dashboard/module/entities/{entity}', 'EntityController@show')->name('entities.show')->middleware('permission:entities.show');
 
-            Route::get('entities/{entity}', 'EntityController@show')->name('entities.show')->middleware('permission:entities.show');
+            Route::delete('dashboard/module/entities/{entity}', 'EntityController@destroy')->name('entities.destroy')->middleware('permission:entities.destroy');
 
-            Route::delete('entities/{entity}', 'EntityController@destroy')->name('entities.destroy')->middleware('permission:entities.destroy');
-
-            Route::get('entities/{entity}/edit', 'EntityController@edit')->name('entities.edit')->middleware('permission:entities.edit');
+            Route::get('dashboard/module/entities/{entity}/edit', 'EntityController@edit')->name('entities.edit')->middleware('permission:entities.edit');
 
             //ips
-            Route::get('ips', 'IpsController@index')->name('ips.index')->middleware('permission:ips.index');
+            Route::get('dashboard/module/ips', 'IpsController@index')->name('ips.index')->middleware('permission:ips.index');
 
-            Route::get('ips/create', 'IpsController@create')->name('ips.create')->middleware('permission:ips.create');
+            //Route::get('dashboard/module/ips/create', 'IpsController@create')->name('ips.create')->middleware('permission:ips.create');
 
-            Route::post('ips/store', 'IpsController@store')->name('ips.store')->middleware('permission:ips.create');
+            Route::post('dashboard/module/ips/store', 'IpsController@store')->name('ips.store')->middleware('permission:ips.create');
+            Route::get('dashboard/module/ips/table/{ips}', 'IpsController@loadTable')->name('ips.load')->middleware('permission:ips.show');
 
-            Route::put('ips/{ips}', 'IpsController@update')->name('ips.update')->middleware('permission:ips.edit');
+            Route::put('dashboard/module/ips/{ips}', 'IpsController@update')->name('ips.update')->middleware('permission:ips.edit');
 
-            Route::get('ips/{ips}', 'IpsController@show')->name('ips.show')->middleware('permission:ips.show');
+            Route::get('dashboard/module/ips/{ips}', 'IpsController@show')->name('ips.show')->middleware('permission:ips.show');
 
-            Route::delete('ips/{ips}', 'IpsController@destroy')->name('ips.destroy')->middleware('permission:ips.destroy');
+            Route::delete('dashboard/module/ips/{ips}', 'IpsController@destroy')->name('ips.destroy')->middleware('permission:ips.destroy');
 
-            Route::get('ips/{ips}/edit', 'IpsController@edit')->name('ips.edit')->middleware('permission:ips.edit');
+            Route::get('dashboard/module/ips/{ips}/edit', 'IpsController@edit')->name('ips.edit')->middleware('permission:ips.edit');
+
 
            //health teams
             Route::get('healthteams', 'HealthTeamController@index')->name('health.teams.index')->middleware('permission:health.teams.index');
@@ -183,6 +185,7 @@
 
         Route::get('municipalities/{id}', 'MunicipalityController@loadMunicipality')->name('load.municipalities');
 
+<<<<<<< HEAD
         //SEGURITY SOCIAL
         Route::get('socialSecurity', 'SocialSecurityController@index')->name('socialSecurity.index')->middleware('permission:socialSecurity.index');
 
@@ -200,6 +203,8 @@
 
 
 
+=======
+>>>>>>> refs/remotes/origin/master
         });
     });
     Route::get('database', 'Functions@loadDtabase');

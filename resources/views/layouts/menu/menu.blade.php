@@ -19,7 +19,7 @@
                     @can('roles.index')
                         <li class="space-li">
                             <a class="space-a"  href="{{route('roles.index')}}" aria-expanded="false">
-                                <i class=" icon-user-follow"></i>
+                                <i class="fa fa-users"></i>
                                 <span class="hide-menu">Roles</span>
                             </a>
                         </li>
@@ -27,7 +27,7 @@
                     @can('users.index')
                         <li class="space-li">
                             <a class="space-a "  href="{{route('users.index')}}">
-                                <i class=" icon-user-follow"></i>
+                                <i class="fa fa-user"></i>
                                 <span class="hide-menu">Usuarios</span>
                             </a>
                         </li>
@@ -35,16 +35,16 @@
                     @can('ips.index')
                         <li class="space-li">
                             <a class="space-a " href="{{route('ips.index')}}">
-                                <i class=" icon-user-follow"></i>
+                                <i class="fa fa-plus-square"></i>
                                 <span class="hide-menu">IPS</span>
                             </a>
                         </li>
                     @endcan
                     @can('socialSecurity.index')
                         <li class="space-li">
-                            <a class="space-a " href="{{route('socialSecurity.index')}}">
-                                <i class=" icon-user-follow"></i>
-                                <span class="hide-menu">Seguridad social</span>
+                            <a class="space-a " href="{{route('entities.index')}}">
+                                <i class="fa fa-building-o"></i>
+                                <span class="hide-menu">Entidades</span>
                             </a>
                         </li>
                     @endcan
