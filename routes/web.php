@@ -91,19 +91,19 @@
             Route::get('healthteams/{healthteam}/edit', 'HealthTeamController@edit')->name('health.teams.edit')->middleware('permission:health.teams.edit');
 
          //emails
-        Route::get('emails', 'EmailController@index')->name('emails.index')->middleware('permission:emails.index');
+        Route::get('emails', 'MailController@index')->name('emails.index')->middleware('permission:emails.index');
 
-        Route::get('emails/create', 'EmailController@create')->name('emails.create')->middleware('permission:emails.create');
+        Route::get('emails/create', 'MailController@create')->name('emails.create')->middleware('permission:emails.create');
 
-        Route::post('emails/store', 'EmailController@store')->name('emails.store')->middleware('permission:emails.create');
+        Route::post('emails/store', 'MailController@store')->name('emails.store')->middleware('permission:emails.create');
 
-        Route::put('emails/{email}', 'EmailController@update')->name('emails.update')->middleware('permission:emails.edit');
+        Route::put('emails/{email}', 'MailController@update')->name('emails.update')->middleware('permission:emails.edit');
 
-        Route::get('emails/{email}', 'EmailController@show')->name('emails.show')->middleware('permission:emails.show');
+        Route::get('emails/{email}', 'MailController@show')->name('emails.show')->middleware('permission:emails.show');
 
-        Route::delete('emails/{email}', 'EmailController@destroy')->name('emails.destroy')->middleware('permission:emails.destroy');
+        Route::delete('emails/{email}', 'MailController@destroy')->name('emails.destroy')->middleware('permission:emails.destroy');
 
-        Route::get('emails/{email}/edit', 'EmailController@edit')->name('emails.edit')->middleware('permission:emails.edit');
+        Route::get('emails/{email}/edit', 'MailController@edit')->name('emails.edit')->middleware('permission:emails.edit');
 
         //Cost Services
         Route::get('costservices', 'CostServiceController@index')->name('cost.services.index')->middleware('permission:cost.services.index');
@@ -197,6 +197,7 @@
         Route::delete('socialSecurity/{socialSecuritys}', 'SocialSecurityController@destroy')->name('socialSecurity.destroy')->middleware('permission:socialSecurity.destroy');
 
         Route::get('socialSecurity/{socialSecuritys}/edit', 'SocialSecurityController@edit')->name('socialSecurity.edit')->middleware('permission:socialSecurity.edit');
+
 
 
         });

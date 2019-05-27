@@ -203,7 +203,7 @@
 <!-- Smoke -->
 <script src="{{asset('node_modules/smoke-v3.1.1/js/smoke.min.js')}}"></script>
 <!-- language -->
-<script src="{{asset('node_modules/smoke-v3.1.1//lang/es.min.js')}}"></script>
+<script src="{{asset('node_modules/smoke-v3.1.1/lang/es.min.js')}}"></script>
 <script src="{{asset('node_modules/popper/popper.min.js')}}"></script>
 <script src="{{asset('node_modules/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <!-- slimscrollbar scrollbar JavaScript -->

@@ -48,6 +48,30 @@
                             </a>
                         </li>
                     @endcan
+                    @can('emails.index')
+                        <li class="space-li">
+                            <a class="space-a " href="{{route('emails.index')}}">
+                                <i class=" icon-user-follow"></i>
+                                <span class="hide-menu">Emails</span>
+                            </a>
+                        </li>
+                    @endcan
+                    @can('emails.index')
+                        <li class="space-li">
+                            <a class="space-a " href="{{route('cost.services.index')}}">
+                                <i class=" icon-user-follow"></i>
+                                <span class="hide-menu">Costos y Servicios</span>
+                            </a>
+                        </li>
+                    @endcan
+                    @can('affiliations.index')
+                        <li class="space-li">
+                            <a class="space-a " href="{{route('affiliations.index')}}">
+                                <i class=" icon-user-follow"></i>
+                                <span class="hide-menu">Afiliaciones</span>
+                            </a>
+                        </li>
+                    @endcan
                 </ul>
             </nav>
             <!-- End Sidebar navigation -->

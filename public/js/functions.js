@@ -232,3 +232,168 @@ function update_SegSoc(id) {
         });
     }
 }
+
+function create_email() {
+    var data = $('#newEmail').serialize();
+    var url = route('emails.store');
+    if ($('#newEmail').smkValidate()) {
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: data,
+            beforeSend: function () {
+                $('#newEmail')[0].reset();
+            },
+            success: function (ans) {
+                if ($.isEmptyObject(ans.error)) {
+                    $('#response').html('');
+                    $('#response').append("<div class='alert alert-success alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>" + ans.success + "</div>");
+                    setTimeout(function() {
+                        $("#response").fadeOut(1500);
+                    },3000);
+
+                } else {
+                    $('#response').html('');
+                    $('#response').append("<div class='alert alert-danger alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>" + ans.error + "</div>");
+                }
+
+            },
+        });
+    }
+}
+
+function update_email(id) {
+    var data = $('#editEmail').serialize();
+    var url = route('emails.update', {id: id});
+    if ($('#editEmail').smkValidate()) {
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: data,
+            success: function (ans) {
+                if ($.isEmptyObject(ans.error)) {
+                    $('#response').html('');
+                    $('#response').append("<div class='alert alert-success alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>" + ans.success + "</div>");
+                    setTimeout(function() {
+                        $("#response").fadeOut(1500);
+                    },3000);
+
+                } else {
+                    $('#response').html('');
+                    $('#response').append("<div class='alert alert-danger alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>" + ans.error + "</div>");
+                }
+
+            },
+        });
+    }
+}
+
+function create_CostoService() {
+    var data = $('#newCosSer').serialize();
+    var url = route('cost.services.store');
+    if ($('#newCosSer').smkValidate()) {
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: data,
+            beforeSend: function () {
+                $('#newCosSer')[0].reset();
+            },
+            success: function (ans) {
+                if ($.isEmptyObject(ans.error)) {
+                    $('#response').html('');
+                    $('#response').append("<div class='alert alert-success alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>" + ans.success + "</div>");
+                    setTimeout(function() {
+                        $("#response").fadeOut(1500);
+                    },3000);
+
+                } else {
+                    $('#response').html('');
+                    $('#response').append("<div class='alert alert-danger alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>" + ans.error + "</div>");
+                }
+
+            },
+        });
+    }
+}
+
+function update_CostoService(id) {
+    var data = $('#editCosSer').serialize();
+    var url = route('cost.services.update', {id: id});
+    if ($('#editCosSer').smkValidate()) {
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: data,
+            success: function (ans) {
+                if ($.isEmptyObject(ans.error)) {
+                    $('#response').html('');
+                    $('#response').append("<div class='alert alert-success alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>" + ans.success + "</div>");
+                    setTimeout(function() {
+                        $("#response").fadeOut(1500);
+                    },3000);
+
+                } else {
+                    $('#response').html('');
+                    $('#response').append("<div class='alert alert-danger alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>" + ans.error + "</div>");
+                }
+
+            },
+        });
+    }
+}
+
+function create_affiliation() {
+    var data = $('#newAffiliation').serialize();
+    var url = route('affiliations.store');
+    if ($('#newAffiliation').smkValidate()) {
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: data,
+            beforeSend: function () {
+                $('#newAffiliation')[0].reset();
+            },
+            success: function (ans) {
+                if ($.isEmptyObject(ans.error)) {
+                    $('#response').html('');
+                    $('#response').append("<div class='alert alert-success alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>" + ans.success + "</div>");
+                    setTimeout(function() {
+                        $("#response").fadeOut(1500);
+                    },3000);
+
+                } else {
+                    $('#response').html('');
+                    $('#response').append("<div class='alert alert-danger alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>" + ans.error + "</div>");
+                }
+
+            },
+        });
+    }
+}
+
+function update_affiliation(id) {
+    var data = $('#edit_affiliation').serialize();
+    var url = route('affiliations.update', {id: id});
+    if ($('#edit_affiliation').smkValidate()) {
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: data,
+            success: function (ans) {
+                if ($.isEmptyObject(ans.error)) {
+                    $('#response').html('');
+                    $('#response').append("<div class='alert alert-success alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>" + ans.success + "</div>");
+                    setTimeout(function() {
+                        $("#response").fadeOut(1500);
+                    },3000);
+
+                } else {
+                    $('#response').html('');
+                    $('#response').append("<div class='alert alert-danger alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>" + ans.error + "</div>");
+                }
+
+            },
+        });
+    }
+}

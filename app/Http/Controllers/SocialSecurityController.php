@@ -36,7 +36,7 @@ class SocialSecurityController extends Controller
         if ($validations == true) {
             if ($request->hasFile('file'))
             {
-                $file=$request->file('file');
+                    $file=$request->file('file');
                 $name=time().$file->getClientOriginalName();
                 $file->move(public_path().'/images/',$name);
             }

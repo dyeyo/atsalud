@@ -31,81 +31,81 @@
                     <div id="response"></div>
                     {{--<form action="javascript:void(0)" method="post" id="newSG" name="newSG">--}}
                     <form action="{{ route('socialSecurity.store') }}" method="post" id="newSG" name="newSG" enctype="multipart/form-data">
-                        {{csrf_field()}}
-                        <div class="form-body">
-                            <h3 class="card-title">Datos de la IPS</h3>
-                            <hr>
-                            <div class="row p-t-20">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" id="business_name" name="business_name" class="form-control" placeholder="Nombre del negocio (*)" required>
-                                    </div>
+                    {{csrf_field()}}
+                        <h3 class="card-title">Datos de la IPS</h3>
+                        <hr>
+                        <div class="row p-t-20">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" id="business_name" name="business_name" class="form-control" placeholder="Nombre del negocio (*)" required>
                                 </div>
-                            </div>
-                            <div class="row p-t-20">
-                                <!--/span-->
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" id="tradename" name="tradename" class="form-control form-control-danger" placeholder="Nombre comercial(*)" required>
-                                    </div>
-                                </div>
-                                    <!--/span-->
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" id="nit" name="nit" class="form-control" placeholder="NIT(*)" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row p-t-20">
-                                <!--/span-->
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" id="address" name="address" class="form-control form-control-danger" placeholder="Dirección" required>
-                                    </div>
-                                </div>
-                                    <!--/span-->
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" id="phone" name="phone" class="form-control" placeholder="Teléfono" required>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="row p-t-20">
-
-                                <!--/span-->
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="email" id="email" name="email" class="form-control form-control-danger" placeholder="Correo Electronico(*)" required>
-                                    </div>
-                                </div>
-                                    <!--/span-->
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <select name="type" id="type" class=" form-control custom-select" style="width: 100%; height:36px;" onchange="tipos()">
-                                            <option value="">Seleccione una opcion</option>
-                                            <option value="EPS">EPS</option>
-                                            <option value="CCF">CCF</option>
-                                            <option value="ARP">ARP</option>
-                                            <option value="AFP">AFP</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12" id="imagen" style="display: none">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title">Suba su imagen</h4>
-                                        <label for="input-file-now"></label>
-                                        <input type="file" id="input-file-now" name="file"  class="dropify" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <button class="btn btn-success" onclick="create_socialSegurity()"> <i class="fa fa-check"></i> Guardar</button>
-                                {{--<button class="btn btn-success" type="submit"> <i class="fa fa-check"></i> Guardar</button>--}}
                             </div>
                         </div>
+                        <div class="row p-t-20">
+                            <!--/span-->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" id="tradename" name="tradename" class="form-control form-control-danger" placeholder="Nombre comercial(*)" required>
+                                </div>
+                            </div>
+                            <!--/span-->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" id="nit" name="nit" class="form-control" placeholder="NIT(*)" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row p-t-20">
+                            <!--/span-->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" id="address" name="address" class="form-control form-control-danger" placeholder="Dirección" required>
+                                </div>
+                            </div>
+                            <!--/span-->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" id="phone" name="phone" class="form-control" placeholder="Teléfono" required>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row p-t-20">
+
+                            <!--/span-->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="email" id="email" name="email" class="form-control form-control-danger" placeholder="Correo Electronico(*)" required>
+                                </div>
+                            </div>
+                            <!--/span-->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <select name="type" id="type" class=" form-control custom-select" style="width: 100%; height:36px;" onchange="tipos()">
+                                        <option value="">Seleccione una opcion</option>
+                                        <option value="EPS">EPS</option>
+                                        <option value="CCF">CCF</option>
+                                        <option value="ARP">ARP</option>
+                                        <option value="AFP">AFP</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12" id="imagen" style="display: none">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Suba su imagen</h4>
+                                    <label for="input-file-now"></label>
+                                    <input type="file" id="input-file-now" name="file"  class="dropify" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success" onclick="create_socialSegurity()"> <i class="fa fa-check"></i> Guardar</button>
+                            {{--<button class="btn btn-success" type="submit"> <i class="fa fa-check"></i> Guardar</button>--}}
+                        </div>
+                </div>
+                <div class="form-body">
                     </form>
                 </div>
             </div>
